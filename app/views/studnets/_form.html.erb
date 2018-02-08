@@ -1,0 +1,32 @@
+<%= form_with(model: studnet, local: true) do |form| %>
+  <% if studnet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(studnet.errors.count, "error") %> prohibited this studnet from being saved:</h2>
+
+      <ul>
+      <% studnet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lanme %>
+    <%= form.text_field :lanme, id: :studnet_lanme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fname %>
+    <%= form.text_field :fname, id: :studnet_fname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :studnet_email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Studnets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lanme</th>
+      <th>Fname</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @studnets.each do |studnet| %>
+      <tr>
+        <td><%= studnet.lanme %></td>
+        <td><%= studnet.fname %></td>
+        <td><%= studnet.email %></td>
+        <td><%= link_to 'Show', studnet %></td>
+        <td><%= link_to 'Edit', edit_studnet_path(studnet) %></td>
+        <td><%= link_to 'Destroy', studnet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Studnet', new_studnet_path %>
